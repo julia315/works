@@ -1,1 +1,481 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <title>蔡詠宇的履歷表</title>
+  <style>
+    .wordw{
+      font-weight: 900;
+      color: rgb(86, 138, 236);
+    }
+    .container {
+      max-width: 1024px;
+      margin: 100px auto;
+    }
+    @media(max-width: 768px){
+      .container{
+        margin: 0px;
+        padding: 0px;
+      }
+    }
+    /*上方簡介*/
+    .simpleintroduce{
+      margin: 50px auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .simtxtpic{
+      width: 40%;
+      margin: 40px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.2);
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      transform: rotatey(0deg);
+      backface-visibility: hidden;
+      transition: transform .25s ease-in-out;
+    }
+    .simtxtpic:hover{
+      transform: rotatey(180deg);
+    }
+    .simpic{
+      padding: 20px;
+      font-size: 16px;
+    }
+    .simpicbac{
+      background: #fff;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0px;
+      left: 0px;
+      box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.2);
+      transform: rotatey(-180deg);
+      backface-visibility: hidden;
+      transition: transform .25s ease-in-out;
+    }
+    .simpicbac:hover{
+      transform: rotatey(0deg);
+    }
+    .sim1img{
+      border-radius: 40px;
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+    .simimg{
+      position: relative;
+    }
+    .simimg img{
+      width: 500px;
+      height: 500px;
+      object-fit: cover;
+    }
+    @media(max-width: 768px){
+      .simpleintroduce{
+        flex-direction: column-reverse;
+      }
+      .simimg {
+        position: relative;
+        margin-top: -200px;
+      }
+      .simimg img{
+        width: 100%;
+        height: auto;
+      }
+      .simtxtpic{
+        width: 100%;
+        margin: 0px;
+      }
+      .sim1img{
+        display: none;
+      }
+    }
+    /*專長技能*/
+    .skills{
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      width: 100%;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .skills p{
+      background: #fff;
+      color: #969696;
+      padding: 5px 10px;
+      margin: 5px;
+      border-radius: 20px;
+      font-size: 14px;
+    }
+    @media(max-width: 768px){
+      .skills{
+        bottom: 60px; 
+        flex-wrap: wrap;
+      }
+      .skills p{
+        font-size: 18px;
+      }
+    }
+    /*自我介紹*/
+    .introduce{
+      max-width: 980px;
+      margin: 50px auto;
+      padding: 40px;
+      border: 1px solid #000;
+      border-radius: 10px;
+    }
+    .in{
+      margin: 20px 10px;
+      padding: 20px;
+      border: 2px dashed #000;
+      border-radius: 20px;
+      text-align: justify;
+    }
+    .intitle{
+      font-weight: 800;
+    }
+    @media(max-width: 768px){
+      .introduce{
+        margin: 20px 20px 50px;
+        padding: 0px;
+        border: 0px;
+      }
+      .in{
+        margin: 20px 0px;
+      }
+      .workstitle, .prohecttotle{
+        margin: 10px 20px;
+      }
+    }
+    /*作品集*/
+    .workstitle,.prohecttotle {
+      text-align: center;
+      margin: 10px auto 50px;
+      padding: 10px;
+      font-size: 36px;
+      border-radius: 20px;
+      background: #000;
+      color: #fff;
+
+    }
+    body .card{
+      border-radius: 10px;
+      padding: 10px;
+    }
+    .card:hover{
+      border: 1px solid #000;
+    }
+    .card-title {
+      text-align: center;
+    }
+    .car-new .card-img-overlay {
+      opacity: 0;
+      color: azure;
+      background-color: cadetblue;
+      transition: 0.5s;
+    }
+    .card-img,
+    .card-img-bottom,
+    .card-img-top {
+      height: 150px;
+      object-fit: cover;
+    }
+    .btn-primary {
+      background: #000;
+      border-color: #000;
+    }
+    body .btn-primary:hover {
+      background: #000;
+      border-color: #000;
+    }
+    @media(max-width: 768px){
+      .works{
+        margin: 20px;
+      }
+    }
+    /*專案*/
+    .item{
+      margin: 50px auto;
+    }
+    .itemtitle{
+      margin: 10px;
+      padding: 10px;
+      font-size: 36px;
+      text-align: left;
+    }
+    .itemimg{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+    .itemimg a {
+      width: calc(100% / 3);
+    }
+    .itemimg a:hover {
+      opacity: 0.7;
+    }
+    .itemimg a > img {
+      width: 100%;
+    }
+    .webitemimg{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+    .webitemimg a {
+      color: #fff;
+      background: #568aed;
+      border: 1px solid #568aed;
+      padding: 10px;
+      text-decoration: none;
+    }
+    .webitemimg a:hover {
+      color: #568aed;
+      background: #fff;
+    }
+    @media(max-width: 768px){
+      .webitemimg a{
+        width: 45%;
+        text-align: center;
+        margin: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="simpleintroduce">
+      <div class="simtxtpic">
+        <div class="simpicbac"></div>
+        <img class="sim1img" src="about1.jpg" alt="">
+        <div class="simpic">
+          <p>姓名:蔡詠宇</p>
+          <p>目前任職於亞路科技專案助理</p>
+          <p>畢業於私立淡江大學資訊管理</p>
+        </div>
+      </div>
+      <div class="simimg">
+        <img src="about2.jpg" alt="">
+        <div class="skills">
+          <p>html/css/git</p>
+          <p>canva/chatGPT</p>
+          <p>客戶關係維護/解決方案</p>
+          <p>官網維護</p>
+        </div>
+      </div>
+    </div>
+    <div class="workstitle">簡介 Introduce</div>
+    <div class="introduce">
+      <div class="hoppy in">
+        <p class="intitle">興趣</p>
+        <p>貓派、有氧拳擊、到處旅行，曾在溫哥華生活兩個月，體驗不同的文化與生活，以及增進英文能力。
+        </p>
+      </div>
+      <div class="workex in">
+        <p class="intitle">工作經驗</p>
+        <p>◎曾在<b class="wordw">點點印相片書公司</b>擔任電商助理，負責產品上架、活動檔期設定、網頁切版、官網維護、簡易修圖。</p>
+        <p>◎曾在<b class="wordw">甲山林</b>擔任女專助理，負責財務相關報表製作、客戶資料建檔、行政事務處理，參與專案:江南star,都廳大院。</p>
+        <p>◎目前在<b class="wordw">亞路科技公司</b>擔任專案助理，負責網頁切版製作、簡易logo製作、簡易文案撰寫(ChatGPT應用)、官網維護、客戶服務與關懷，參與專案: 商圈店家網站切版與設定、日本毛巾wellis品牌網站切版與設定、雷蛇-Razer抽獎活動網站切版與設定、朱銘官網維護、鴻海集團子公司-鴻騰精密科技公司官網維護、原漾旅行社官網維護、宏碁aeb官網維護、信鴿網站官網維護、三創生活購物網維護...等等。</p>
+      </div>
+      <div class="us in">
+        <p class="intitle">大學</p>
+        <p>我是個獨立且認真負責的人，原讀文化資傳的我，後來轉到<b class="wordw">淡江資管</b>讀書，想讓自己轉換環境，並學習不同知識。</p>
+      </div>
+      <div class="sh in">
+        <p class="intitle">高中</p>
+        <p>畢業於<b class="wordw">南山高中</b>，曾獲班上品德楷模、曾任副班長、花式籃球社副社長</p>
+      </div>
+    </div>
+    <div class="workex">      
+    </div>
+    <div class="works">
+      <div class="workstitle">作品集 works</div>
+      <div class="row">
+        <div class="col-12 col-md-3 mb-5">
+          <div class="card">
+            <img
+              src="https://athena.noon360.com/noon360/shop6492/MsgInfo/traditional-asian-dumplings-with-chopsticks-herbs%201.png"
+              class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">香香屋湯包</h5>
+              <a href="https://shop6492.noon360.com/" class="btn btn-primary d-block " target="_blank">前往</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-3 mb-5">
+          <div class="card">
+            <img src="https://athena.noon360.com/noon360/shop3530/MsgInfo/3485101908_20231108_13294771.png"
+              class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">嵐鴻商行</h5>
+              <a href="https://shop3530.noon360.com/" class="btn btn-primary d-block " target="_blank">前往</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-3 mb-5">
+          <div class="card">
+            <img src="https://athena.noon360.com/noon360/shop32792/MsgInfo/860571093_20231207_14111041.png"
+              class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">龍寶鱻商行</h5>
+              <a href="https://shop32792.noon360.com/" class="btn btn-primary d-block " target="_blank">前往</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-3 mb-5">
+          <div class="card">
+            <img src="https://athena.noon360.com/noon360/shop9342/MsgInfo/Group33827.png" class="card-img-top"
+              alt="...">
+            <div class="card-body">
+              <h5 class="card-title">舞雞時代炸物專賣</h5>
+              <a href="https://shop9342.noon360.com/" class="btn btn-primary d-block " target="_blank">前往</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-3 mb-5">
+          <div class="card">
+            <img src="https://athena.noon360.com/noon360/shop8951/MsgInfo/1091017309_20240119_10252949.jpg"
+              class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">喜越多寵物美容店</h5>
+              <a href="https://shop8951.noon360.com/" class="btn btn-primary d-block" target="_blank">前往</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-3 mb-5">
+          <div class="card">
+            <img src="https://athena.noon360.com/noon360/shop1942/PageInfo/1006339284_20240229_12023047.jpg"
+              class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">雅昶設計顧問</h5>
+              <a href="https://shop1942.noon360.com/" class="btn btn-primary d-block " target="_blank">前往</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-3 mb-5">
+          <div class="card">
+            <img src="https://athena.noon360.com/noon360/shop6878/MsgInfo/1737834714_20240207_17232967.png"
+              class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Simple life.candle</h5>
+              <a href="https://shop6878.noon360.com/mainssl/modules/MySpace/index.php"
+                class="btn btn-primary d-block justify-content-end" target="_blank">前往</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-3 mb-5">
+          <div class="card">
+            <img src="https://athena.noon360.com/noon360/shop79342/MsgInfo/2230813476_20240118_18252364.png"
+              class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">福麟姓名研究中心</h5>
+              <a href="https://shop79342.noon360.com/mainssl/modules/MySpace/index.php" class="btn btn-primary d-block "
+                target="_blank">前往</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-3 mb-5">
+          <div class="card">
+            <img src="https://athena.noon360.com/noon360/shop6097/MsgInfo/n4.png" class="card-img-top" alt="..."
+              style="object-position: 50% 10%;">
+            <div class="card-body">
+              <h5 class="card-title">傑帝企業社</h5>
+              <a href="https://shop6097.noon360.com/" class="btn btn-primary d-block " target="_blank">前往</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-3 mb-5">
+          <div class="card">
+            <img src="https://athena.noon360.com/noon360/shop6517/MsgInfo/B2.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">玖月村藝術工坊</h5>
+              <a href="https://shop6517.noon360.com/" class="btn btn-primary d-block" target="_blank">前往</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-3 mb-5">
+          <div class="card">
+            <img src="https://athena.noon360.com/noon360/shop8806/MsgInfo/banner1.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">金讚好物嚴選</h5>
+              <a href="https://shop8806.noon360.com/mainssl/modules/MySpace/index.php"
+                class="btn btn-primary d-block justify-content-end" target="_blank">前往</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-3 mb-5">
+          <div class="card">
+            <img src="https://athena.noon360.com/noon360/shop8592/MsgInfo/Frame 24.jpg" class="card-img-top"
+              style="object-position: right;" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">匯客市藝文設計</h5>
+              <a href="https://shop8592.noon360.com/" class="btn btn-primary d-block " target="_blank">前往</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="project">
+        <div class="prohecttotle">專案參與</div>
+        <div class="item">
+          <div class="itemtitle">官網維護</div>
+          <div class="webitemimg">
+            <a href="https://www.juming.org.tw/mainssl/modules/MySpace/index.php?sn=ec&pg=ZC389784&lang=" target="_blank">朱銘美術館</a>
+            <a href="https://www.fit-foxconn.com/mainssl/modules/MySpace/index.php?sn=fit&pg=ZC8691" target="_blank">FIT鴻騰精密科技</a>
+            <a href="https://youngtour.com.tw/mainssl/modules/MySpace/index.php" target="_blank">原漾旅行社</a>
+            <a href="https://www.aceraeb.com/mainssl/modules/MySpace/index.php?sn=acer&pg=ZC91869" target="_blank">AEB宏碁資訊</a>
+            <a href="https://www.llp.com.tw/mainssl/modules/MySpace/PrdList.php?sn=llp&pn=1&cn=ZC410471" target="_blank">信鴿法國書店</a>
+            <a href="https://www.syntrend.com.tw/" target="_blank">三創生活購物網</a>
+          </div>
+        </div>
+        <div class="item">
+          <div class="itemtitle">日本職日生</div>
+          <div class="itemimg">
+            <a href="https://jpexpo.noon360.com/mainssl/modules/MySpace/index.php#bsipb" target="_blank"><img src="https://athena.noon360.com/noon360/payment/MsgInfo/3957528738_20240419_10595626.png" alt=""></a>
+            <a href="https://noon360.com/mainssl/modules/MySpace/PrdList.php?sn=jp&cn=ZC8115848" target="_blank"><img src="https://athena.noon360.com/noon360/payment/MsgInfo/2112538411_20240419_11003915.png" alt=""></a>
+            <a href="https://noon360.com/mainssl/modules/MySpace/PrdList.php?sn=jp&cn=ZC8115859" target="_blank"><img src="https://athena.noon360.com/noon360/payment/MsgInfo/1908267111_20240419_11005719.png" alt=""></a>
+            <a href="https://noon360.com/mainssl/modules/MySpace/PrdList.php?sn=jp&cn=ZC8115864" target="_blank"><img src="https://athena.noon360.com/noon360/payment/MsgInfo/457116225_20240419_11001533.png" alt=""></a>
+            <a href="https://noon360.com/mainssl/modules/MySpace/PrdList.php?sn=jp&cn=ZC8116391" target="_blank"><img src="https://athena.noon360.com/noon360/payment/MsgInfo/3509205797_20240419_11021669.png" alt=""></a>
+            <a href="https://noon360.com/mainssl/modules/MySpace/PrdList.php?sn=jp&cn=ZC8116402" target="_blank"><img src="https://athena.noon360.com/noon360/payment/MsgInfo/1265957856_20240419_11003084.png" alt=""></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
